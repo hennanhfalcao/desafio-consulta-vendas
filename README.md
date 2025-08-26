@@ -111,9 +111,6 @@ GET http://localhost:8080/sales/report?page=1&size=10
   "size": 20
 }
 ```
-
-> **Ordenação fixa:** `date DESC, id DESC`. O `sort` da URL é ignorado.
-
 ---
 
 ### 2) Sumário por vendedor (agregado)
