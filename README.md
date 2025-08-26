@@ -55,8 +55,8 @@ API REST em **Spring Boot** para consultar vendas com **filtros por período e n
 
 ### 1) Clonar
 ```bash
-git clone <seu-repo.git>
-cd <seu-repo>
+git clone git@github.com:hennanhfalcao/desafio-consulta-vendas.git
+cd desafio-consulta-vendas
 ```
 
 ### 2) Subir a aplicação
