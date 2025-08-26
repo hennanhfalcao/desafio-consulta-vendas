@@ -38,8 +38,8 @@ API REST em **Spring Boot** para consultar vendas com **filtros por período e n
   - `SaleSummaryDTO { sellerName, total }`
   - `SaleMinDTO { id, amount, date }` (usado em `/sales/{id}`)
 - **Repository**
-  - `searchReport(min, max, name, pageable)` – JPQL com `BETWEEN` nas datas, `LIKE` case-insensitive no nome, **ORDER BY `s.date DESC, s.id DESC`**.
-  - `searchSummary(min, max)` – JPQL com `SUM(s.amount)` e `GROUP BY s.seller.name` (opcional: `ORDER BY SUM(...) DESC`).
+  - `searchReport(min, max, name, pageable)` – JPQL com `BETWEEN` nas datas, `LIKE` case-insensitive no nome.
+  - `searchSummary(min, max)` – JPQL com `SUM(s.amount)` e `GROUP BY s.seller.name`.
 - **Service**
   - Recebe strings do controller, converte para `LocalDate` e aplica defaults:  
     `max = LocalDate.ofInstant(Instant.now(), ZoneId.systemDefault())`  
