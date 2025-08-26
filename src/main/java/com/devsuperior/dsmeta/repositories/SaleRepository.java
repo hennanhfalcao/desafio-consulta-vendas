@@ -16,7 +16,10 @@ public interface SaleRepository extends JpaRepository<Sale, Long> {
             "WHERE s.date BETWEEN :minDate AND :maxDate AND UPPER(s.seller.name) LIKE UPPER(CONCAT('%', :name, '%'))")
     Page<Sale> searchReport(LocalDate minDate, LocalDate maxDate, String name, Pageable pageable);
 
-    @Query
+    @Query("SELECT s.seller.name, SUM(s.amount) " +
+            "FROM Sale s " +
+            "WHERE s.date BETWEEN :minDate AND :maxDate " +
+            "GROUP BY s.seller.name")
     List<Object[]> searchSummary(LocalDate minDate, LocalDate maxDate);
 
 }
